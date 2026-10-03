@@ -41,7 +41,7 @@ services:
 
   migrate-next:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile
       target: server
     image: agents-anywhere-server:postgres

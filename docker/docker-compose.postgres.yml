@@ -55,6 +55,12 @@ services:
     command: ["sh", "-c", "cd /app/server && uv run --no-sync python -m agent_server.infra.db.migrations upgrade"]
 
   server-next:
+    build:
+    context: .
+    dockerfile: docker/Dockerfile
+    target: server
+  image: agents-anywhere-server:postgres
+  # ... resto de la configuración
     image: agents-anywhere-server:postgres
     restart: unless-stopped
     depends_on:

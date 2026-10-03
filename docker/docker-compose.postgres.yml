@@ -45,6 +45,7 @@ services:
       dockerfile: docker/Dockerfile
       target: server
     image: agents-anywhere-server:postgres
+    restart: "no"
     depends_on:
       postgres-next:
         condition: service_healthy
